@@ -21,7 +21,7 @@ chords = OrderedDict()
 def main(input, output):
     for line in input.read().splitlines():
         name, seq = line.split('\t')
-        name = name.strip()
+        name = name.strip().replace(' ', '')
         seq = seq.strip().replace(',', '')
         chords[name] = chords.get(name, []) + [seq]
 
