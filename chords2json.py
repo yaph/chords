@@ -16,8 +16,8 @@ chords = OrderedDict()
 
 
 @click.command()
-@click.argument('input', type=click.File('rb'))
-@click.argument('output', type=click.File('wb'))
+@click.argument('input', type=click.File('r'))
+@click.argument('output', type=click.File('w'))
 def main(input, output):
     for line in input.read().splitlines():
         name, seq = line.split('\t')
