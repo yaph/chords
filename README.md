@@ -18,10 +18,11 @@ Run tests from the root directory of the project. Currently there are only tests
 
 ## Todos
 
-* Better project structure
-* Generating bar and power chords for the guitar in E and A form
+* Generate bar and power chords for the guitar in E and A form
 * Guitar chord tests
 * Make MAX_FRET a command line argument with 4 as the default
+* Merge chord_list.py and chords2json.py and only generate json files
+* Turn guitar Chord class into function(s)
 
 ## Credits
 
