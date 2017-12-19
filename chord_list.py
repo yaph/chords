@@ -7,7 +7,7 @@ import itertools
 import chord
 
 
-MAX_FRET = 4
+MAX_FRET = 5
 
 tunings = {
     'guitar': ['E', 'A', 'D', 'G', 'B', 'E'],
