@@ -29,7 +29,6 @@ def rotate(L, n=1):
 class Chord:
 
     def __init__(self, finger_postions, tuning):
-        self.finger_postions = finger_postions
         self.chord_type = None
         self.root_note = None
 

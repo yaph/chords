@@ -4,7 +4,7 @@
 import sys
 import itertools
 
-from chord import Chord
+import chord
 
 
 MAX_FRET = 4
@@ -20,9 +20,14 @@ if len(sys.argv) > 1 and sys.argv[1] == 'guitar':
 
 # Print all finger positions from 0 to max fret for identified chords.
 for finger_postions in itertools.product(range(0, MAX_FRET + 1), repeat=len(tuning)):
-    c = Chord(finger_postions, tuning)
+    c = chord.Chord(finger_postions, tuning)
     if not c.root_note:
         continue
 
     pos = ','.join(map(str, finger_postions))
     print('{}\t{}'.format(c.name, pos))
+
+    # If it's a sharp also print corresponding flat.
+    if len(c.name) > 1 and '#' == c.name[1]:
+        flat = '{}b{}'.format(chord.pitches[chord.pitches.index(c.name[:2]) + 1], c.name[2:])
+        print('{}\t{}'.format(flat, pos))
